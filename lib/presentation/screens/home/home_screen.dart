@@ -3,7 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:virus_scan/config/colors.dart';
-import 'package:virus_scan/presentation/screens/home/widgets/user_apps.dart';
+import 'package:virus_scan/presentation/screens/home/widgets/home_body.dart';
+import 'package:virus_scan/presentation/screens/news/news.dart';
+import 'package:virus_scan/presentation/screens/scan/scan.dart';
+import 'package:virus_scan/presentation/screens/settings/setttings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,69 +17,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+  List<Widget> screens = [
+    HomeBody(),
+    ScanScreen(),
+    SizedBox(),
+    NewsScreen(),
+    SettingsScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.lightBackgroundColor,
-      body: SafeArea(
-        child: DefaultTabController(
-          length: 2,
-          child: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return [
-                SliverAppBar(
-                  //floating: true,
-                  pinned: true,
-                  backgroundColor: Colors.white,
-                  // toolbarHeight: 70.0,
-                  title: Text("VirusTotal",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black,
-                      )),
-                  actions: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 12),
-                      child: SvgPicture.asset(
-                        "assets/icons/search-normal.svg",
-                      ),
-                    ),
-                  ],
-                  bottom: TabBar(
-                    indicator:
-                        CircleTabIndicator(color: Colors.black, radius: 4),
-                    indicatorSize: TabBarIndicatorSize.label,
-                    indicatorWeight: 2,
-                    labelPadding: const EdgeInsets.only(bottom: 16),
-                    unselectedLabelColor: AppColor.unSelectedColor,
-                    labelColor: Colors.black,
-                    labelStyle: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
-                    ),
-                    tabs: const [
-                      Text(
-                        "User Apps",
-                      ),
-                      Text(
-                        "System Apps",
-                      ),
-                    ],
-                  ),
-                ),
-              ];
-            },
-            body: TabBarView(
-              children: const [
-                UserApps(isUser: true),
-                UserApps(isUser: false),
-              ],
-            ),
-          ),
-        ),
-      ),
+      body: SafeArea(child: screens[currentIndex]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(
@@ -94,9 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: AppColor.selectedColor,
-        unselectedItemColor: AppColor.unSelectedColor,
         items: [
           BottomNavigationBarItem(
             label: "Apps",

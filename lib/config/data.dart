@@ -1,1 +1,1 @@
-List<String> slideData = ["All", "Clean", "UnKnown", "Sus", "Known"];
+List<String> slideData = ["All", "Clean", "UnKnown", "Suspect"];

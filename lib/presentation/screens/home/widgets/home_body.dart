@@ -16,9 +16,8 @@ class HomeBody extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return [
             SliverAppBar(
-              //floating: true,
-              pinned: true,
-              // toolbarHeight: 70.0,
+              floating: true,
+              snap: true,
               title: Text(
                 "VirusTotal",
                 style: Theme.of(context).textTheme.headline4,

@@ -69,7 +69,7 @@ var data = [
     "package": "com.google.android.gm",
     "virus": 0,
     "total": 73,
-    "image": "images/g-mail.png",
+    "image": "images/gmail.png",
     "status": DataStatus.complete
   },
   {

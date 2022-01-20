@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virus_scan/config/app_theme.dart';
+import 'package:virus_scan/config/scroll_constant.dart';
 import 'package:virus_scan/config/valuenotif.dart';
 import 'package:virus_scan/presentation/screens/home/home_screen.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           theme: AppNotifier.appTheme.value
               ? AppTheme.buildDarkTheme()
               : AppTheme.buildLightTheme(),
-          home: const HomeScreen(),
+          home: const ScrollConstant(child: HomeScreen()),
           debugShowCheckedModeBanner: false,
         );
       },

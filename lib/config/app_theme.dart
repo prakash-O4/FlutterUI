@@ -142,6 +142,10 @@ class AppTheme {
           ),
         ),
       ),
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.all(AppColor.toggleOnColor),
+        trackColor: MaterialStateProperty.all(AppColor.toggleOnBackground),
+      ),
       dividerTheme: DividerThemeData(color: AppColor.darkAppBarColor),
       unselectedWidgetColor: AppColor.unSelectedColor,
     );

@@ -16,7 +16,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: AppBar(
         elevation: 0,
         title: Text(
-          "News",
+          "Settings",
           style: Theme.of(context).textTheme.headline4!.copyWith(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,

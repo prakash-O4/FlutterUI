@@ -17,34 +17,37 @@ class _SelectChipsState extends State<SelectChips> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-          children: slideData.map((e) {
-        return Padding(
-          padding: const EdgeInsets.only(right: 10.0),
-          child: ChoiceChip(
-            labelPadding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
-            onSelected: (select) {
-              setState(() {
-                selectedData = e;
-                appNotifier.changeValue(e);
-              });
-            },
-            elevation: 0,
-            pressElevation: 0,
-            label: Text(
-              e,
-              style: Theme.of(context).textTheme.headline5!.copyWith(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    color: selectedData == e
-                        ? AppColor.selectedColor
-                        : AppColor.unSelectedColor,
-                  ),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20.0, bottom: 20),
+        child: Row(
+            children: slideData.map((e) {
+          return Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: ChoiceChip(
+              labelPadding: const EdgeInsets.fromLTRB(18, 0, 18, 0),
+              onSelected: (select) {
+                setState(() {
+                  selectedData = e;
+                  appNotifier.changeValue(e);
+                });
+              },
+              elevation: 0,
+              pressElevation: 0,
+              label: Text(
+                e,
+                style: Theme.of(context).textTheme.headline5!.copyWith(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
+                      color: selectedData == e
+                          ? AppColor.selectedColor
+                          : AppColor.unSelectedColor,
+                    ),
+              ),
+              selected: selectedData == e,
             ),
-            selected: selectedData == e,
-          ),
-        );
-      }).toList()),
+          );
+        }).toList()),
+      ),
     );
   }
 }

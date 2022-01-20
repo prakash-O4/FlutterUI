@@ -16,10 +16,7 @@ class UserApps extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(top: 20.0, bottom: 20),
-              child: SelectChips(),
-            ),
+            const SelectChips(),
             ValueListenableBuilder(
               valueListenable: AppNotifier.choices,
               builder: (context, value, child) {
@@ -131,6 +128,7 @@ class AppCard extends StatelessWidget {
                         height: 64,
                         width: 64,
                         decoration: BoxDecoration(
+                          color: Colors.white,
                           borderRadius: const BorderRadius.all(
                             Radius.circular(20),
                           ),

@@ -1,16 +1,16 @@
-# virus_scan
+# Virus Scan
 
-A new Flutter project.
+**Filim** is a redesigned UI of Virus Scan app. Big thanks to the person who made this redesigned UI.
 
-## Getting Started
+**Demo**<br><br>
+[Video](https://www.linkedin.com/posts/prakash-basnet-235b55193_i-have-cloned-virustotal-application-re-designed-activity-6889957296626032640-PiOY)
 
-This project is a starting point for a Flutter application.
+[Download App here](https://drive.google.com/file/d/1fcYhq23If--qJg_QxPg76Z4sS2Ll2hTX/view?usp=sharing)
 
-A few resources to get you started if this is your first Flutter project:
+## Features of Application
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [x] Switch Theme (Best theming practise is used)
+- [x] Custom Page Transistions
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Thank you for being here :smile:
+Star the repo if you find helpful 🤙
